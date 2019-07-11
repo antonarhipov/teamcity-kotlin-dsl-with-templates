@@ -1,8 +1,5 @@
-import jetbrains.buildServer.configs.kotlin.v2018_2.BuildType
-import jetbrains.buildServer.configs.kotlin.v2018_2.DslContext
+import jetbrains.buildServer.configs.kotlin.v2018_2.*
 import jetbrains.buildServer.configs.kotlin.v2018_2.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.v2018_2.project
-import jetbrains.buildServer.configs.kotlin.v2018_2.version
 
 version = "2019.1"
 
@@ -12,6 +9,8 @@ project {
 
 object Build : BuildType({
     name = "Build"
+
+    templates = arrayListOf(AbsoluteId("DslWithTemplates_MyTemplate"))
 
     vcs {
         root(DslContext.settingsRoot)
