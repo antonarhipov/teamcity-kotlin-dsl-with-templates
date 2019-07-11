@@ -10,8 +10,6 @@ project {
 object Build : BuildType({
     name = "Build"
 
-    templates = arrayListOf(AbsoluteId("DslWithTemplates_MyTemplate"))
-
     vcs {
         root(DslContext.settingsRoot)
     }
